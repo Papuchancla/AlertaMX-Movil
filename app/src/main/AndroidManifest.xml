@@ -2,20 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.alertamx">
-
     <!-- Permisos necesarios para la cámara y almacenamiento -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!-- Para Android 10+ (API 29+) necesitas este permiso también -->
-    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
-
-    <!-- Especificar que la app usa cámara (opcional pero recomendado) -->
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- Para Android 10+ (API 29+) necesitas este permiso también -->
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" /> <!-- Especificar que la app usa cámara (opcional pero recomendado) -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -27,6 +27,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertaMX"
         tools:targetApi="31">
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false" />
         <activity
             android:name=".ReportFormActivity"
             android:exported="false" />
